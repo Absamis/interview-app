@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div class="rounded-2xl shadow-lg">
-      <div class="">
+      <div class="text-center">
         <div class="h-[170px] overflow-hidden rounded-tr-2xl rounded-tl-2xl">
           <img src="/d4922183dce51286c45f3cd7aee0f417.png" />
         </div>
@@ -649,9 +649,10 @@
       </div>
       <div class="p-4 text-left">
         <span class="text-sm mb-3 text-[#777795]">1 - 28 July 2022</span>
-        <h1 class="text-xl font-bold mb-2 text-primary-600">
+
+        <a href="" class="text-xl font-bold mb-2 text-primary-600">
           Product Management Basic- Course
-        </h1>
+        </a>
         <p class="text-sm text-[#4D4D4D]">
           Product Management Masterclass, you will learn with Sarah Johnson - Head of
           Product Customer Platform Gojek Indonesia.

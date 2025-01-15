@@ -292,6 +292,8 @@
           </div>
         </div>
       </div>
+    </section>
+    <section>
       <div class="mt-[10em]">
         <h1 class="text-3xl font-bold text-primary-600 text-center">
           Courses Category
@@ -388,10 +390,22 @@
           <div class="text-center my-[5em]">
             <a
               href=""
-              class="p-3 text-base border-1 border-primary-600 px-10 rounded-xl bg-[#fff] text-primary-600"
+              class="p-3 text-base border-2 border-primary-600 px-10 rounded-xl bg-[#fff] text-primary-600"
               >View all</a
             >
           </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="grid grid-col-2 my-[10em]">
+        <div class="">
+          <span class="inline-block p-2 px-6 rounded-lg bg-primary text-primary-600">
+            Benefits
+          </span>
+          <h1 class="text-2xl leading-[1.2em] font-semibold text-primary-600">
+            Get Student ID Card
+          </h1>
         </div>
       </div>
     </section>
