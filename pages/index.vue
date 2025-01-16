@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <div class="grid grid-cols-2 pb-[2.1em] pt-[5em] bg-primary">
+  <div class="overflow-x-hidden">
+    <div class="grid relative grid-cols-2 pb-[2.1em] pt-[5em] bg-primary  px-[4em]">
       <div class="">
         <span class="inline-block p-1 px-6 text-[#333] rounded-lg bg-[#fff]">
           Never stop learning
         </span>
-        <h1 class="text-[4em] leading-[1.2em] font-semibold text-primary-600">
+        <h1 class=" font-raleway text-[4em] leading-[1.2em] font-semibold text-primary-600">
           Grow up your skills by online courses with Onlearning
         </h1>
         <div class="mt-[2.4em] flex items-center">
@@ -103,10 +103,10 @@
           </div>
         </div>
       </div>
-      <div class="relative">
+      <div class="">
         <!-- Count box -->
         <div
-          class="p-5 z-10 absolute top-[11.7em] left-[-15px] inline-block px-6 opacity-[.8] rounded-xl bg-[#fff]"
+          class="p-5 z-10 absolute top-[15.8em] right-[-20] inline-block px-6 opacity-[.8] rounded-xl bg-[#fff]"
         >
           <div class="flex items-center">
             <div
@@ -188,12 +188,12 @@
           </div>
         </div>
         <img
-          class="absolute right-0"
-          style="margin-top: -4em"
-          src="/810b32b8951e291363f4a9e1bdfe4868.png"
+          class="absolute w-[45em] -translate-y-[6.4em]"
+          
+          src="/810b32b8951e291363f4a9e1bdfe4868.png" 
         />
         <div
-          class="w-[65px] absolute right-[12.7em] top-[6em] rounded-2xl flex items-center justify-center h-[65px] bg-[#FD661F] p-2"
+          class="w-[65px] absolute right-[10.5em] top-[9em] rounded-2xl flex items-center justify-center h-[65px] bg-[#FD661F] p-2"
         >
           <div
             class="w-[40px] rounded-lg flex items-center justify-center h-[40px] bg-[#fff] p-2"
@@ -228,350 +228,367 @@
         </div>
       </div>
     </div>
-    <section>
-      <div class="mt-[10em]">
-        <h1 class="text-3xl font-bold text-secondary text-center">
-          Popular Courses
-          <span class="block mt-[-14px] ml-[7em]">
-            <svg
-              width="118"
-              height="10"
-              viewBox="0 0 178 10"
-              fill="none"
-              class="inline"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1 8.32205C49.5338 0.233062 116.717 -0.441062 177.834 8.32205"
-                stroke="#0B7077"
-                stroke-width="2.24694"
-              />
-            </svg>
-          </span>
-        </h1>
-        <ul class="mt-5 text-center flex gap-x-5 justify-center text-[#818C96]">
-          <li>
-            <a href="" class="p-2 px-6 border-2 bg-primary-600 text-[#fff] rounded-xl">
-              All Programme
-            </a>
-          </li>
+    <div class=" px-[4em]">
+      <section>
+        <div class="mt-[8em]">
+          <h1 class="text-3xl font-bold text-secondary text-center">
+            Popular Courses
+            <span class="block mt-[-14px] ml-[7em]">
+              <svg
+                width="118"
+                height="10"
+                viewBox="0 0 178 10"
+                fill="none"
+                class="inline"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 8.32205C49.5338 0.233062 116.717 -0.441062 177.834 8.32205"
+                  stroke="#0B7077"
+                  stroke-width="2.24694"
+                />
+              </svg>
+            </span>
+          </h1>
+          <ul class="mt-5 text-center flex gap-x-5 justify-center text-[#818C96]">
+            <li>
+              <a href="" class="p-2 px-6 border-2 bg-primary-600 text-[#fff] rounded-xl">
+                All Programme
+              </a>
+            </li>
 
-          <li>
-            <a href="" class="p-2 px-6 border-2 border-[#C4C4C4] rounded-xl">
-              UI/UX Design
-            </a>
-          </li>
-          <li>
-            <a href="" class="p-2 px-6 border-2 border-[#C4C4C4] rounded-xl">
-              Program Design
-            </a>
-          </li>
-          <li>
-            <a href="" class="p-2 px-6 border-2 border-[#C4C4C4] rounded-xl">
-              Program Design
-            </a>
-          </li>
-          <li>
-            <a href="" class="p-2 px-6 border-2 border-[#C4C4C4] rounded-xl">
-              Program Design
-            </a>
-          </li>
-          <li>
-            <a href="" class="p-2 px-6 border-2 border-[#C4C4C4] rounded-xl">
-              Program Design
-            </a>
-          </li>
-        </ul>
+            <li v-for="i in tabItems">
+              <UiCourseTabItem :title="i" />
+            </li>
+          </ul>
 
-        <div class="my-[3em]">
-          <div class="grid gap-x-4 grid-cols-4">
-            <UiCourseCard />
-            <UiCourseCard />
-            <UiCourseCard />
-            <UiCourseCard />
+          <div class="my-[3em]">
+            <div class="grid gap-x-4 grid-cols-4">
+              <UiCourseCard v-for="course in courses" :course="course" />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section>
-      <div class="mt-[10em]">
-        <h1 class="text-3xl font-bold text-primary-600 text-center">
-          Courses Category
-          <span class="block text-secondary mt-[-14px] ml-[7em]">
-            <svg
-              width="118"
-              height="10"
-              viewBox="0 0 178 10"
-              fill="none"
-              class="inline"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1 8.37698C49.5338 0.287994 116.717 -0.38613 177.834 8.37698"
-                stroke="#FD661F"
-                stroke-width="2.24694"
-              />
-            </svg>
-          </span>
-        </h1>
-        <p class="mt-5 text-lg text-center w-full md:w-1/2 mx-auto text-[#696984]">
-          Onlearning is one powerful online software suite that combines all the tools
-          needed to run a successful school or office.
-        </p>
-        <div class="my-[3em]">
-          <div class="grid gap-x-4 grid-cols-4">
-            <UiCourseCategoryCard />
-            <UiCourseCategoryCard />
-            <div class="p-3 py-8 shadow-lg rounded-lg">
-              <div class="w-[45px] h-[45px] rounded-full mx-auto bg-primary">
-                <svg
-                  width="48"
-                  height="44"
-                  viewBox="0 0 48 44"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <g clip-path="url(#clip0_1_598)">
-                    <rect
-                      x="-47.8223"
-                      y="-3.47546"
-                      width="198.624"
-                      height="154.716"
-                      fill="url(#pattern0_1_598)"
-                    />
-                  </g>
-                  <defs>
-                    <pattern
-                      id="pattern0_1_598"
-                      patternContentUnits="objectBoundingBox"
-                      width="1"
-                      height="1"
-                    >
-                      <use
-                        xlink:href="#image0_1_598"
-                        transform="scale(0.000834725 0.00107181)"
-                      />
-                    </pattern>
-                    <clipPath id="clip0_1_598">
+      </section>
+      <section>
+        <div class="mt-[8em]">
+          <h1 class="text-3xl font-bold text-primary-600 text-center">
+            Courses Category
+            <span class="block text-secondary mt-[-14px] ml-[7em]">
+              <svg
+                width="118"
+                height="10"
+                viewBox="0 0 178 10"
+                fill="none"
+                class="inline"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 8.37698C49.5338 0.287994 116.717 -0.38613 177.834 8.37698"
+                  stroke="#FD661F"
+                  stroke-width="2.24694"
+                />
+              </svg>
+            </span>
+          </h1>
+          <p class="mt-5 text-lg text-center w-full md:w-1/2 mx-auto text-[#696984]">
+            Onlearning is one powerful online software suite that combines all the tools
+            needed to run a successful school or office.
+          </p>
+          <div class="my-[3em]">
+            <div class="grid gap-x-4 grid-cols-4">
+              <UiCourseCategoryCard />
+              <UiCourseCategoryCard />
+              <div class="p-3 py-8 shadow-lg rounded-lg">
+                <div class="w-[45px] h-[45px] rounded-full mx-auto bg-primary">
+                  <svg
+                    width="48"
+                    height="44"
+                    viewBox="0 0 48 44"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <g clip-path="url(#clip0_1_598)">
                       <rect
-                        width="47"
-                        height="43"
-                        fill="white"
-                        transform="translate(0.306641 0.989746)"
+                        x="-47.8223"
+                        y="-3.47546"
+                        width="198.624"
+                        height="154.716"
+                        fill="url(#pattern0_1_598)"
                       />
+                    </g>
+                    <defs>
+                      <pattern
+                        id="pattern0_1_598"
+                        patternContentUnits="objectBoundingBox"
+                        width="1"
+                        height="1"
+                      >
+                        <use
+                          xlink:href="#image0_1_598"
+                          transform="scale(0.000834725 0.00107181)"
+                        />
+                      </pattern>
+                      <clipPath id="clip0_1_598">
+                        <rect
+                          width="47"
+                          height="43"
+                          fill="white"
+                          transform="translate(0.306641 0.989746)"
+                        />
+                      </clipPath>
+                      
+                    </defs>
+                  </svg>
+                </div>
+                <h3 class="text-2xl mt-3 text-center font-semibold text-primary-600">
+                  Beauty
+                </h3>
+                <p class="text-md text-center my-5 text-[#696984]">
+                  One powerful online software suite that combines
+                </p>
+                <div class="text-center mt-7">
+                  <a
+                    href=""
+                    class="p-3 px-6 block w-3/4 mx-auto text-[#fff] bg-secondary rounded-lg"
+                  >
+                    Explore courses</a
+                  >
+                </div>
+              </div>
+              <UiCourseCategoryCard />
+            </div>
+            <div class="text-center my-[5em]">
+              <a
+                href=""
+                class="p-3 text-base border-2 border-primary-600 px-10 rounded-xl bg-[#fff] text-primary-600"
+                >View all</a
+              >
+            </div>
+          </div>
+        </div>
+      </section> 
+      <section>
+        <div class="grid grid-cols-2 my-[8em]">
+          <div class="px-10">
+            <span class="inline-block p-1 px-6 rounded-lg bg-primary text-primary-600">
+              Benefits
+            </span>
+            <h1 class="text-3xl leading-[1.2em] font-bold mt-2 text-primary-600">
+              Get Student ID Card
+            </h1>
+            <div class="mt-[3em]">
+              <ul class="">
+                <li class="flex mb-3 items-center">
+                  <span class="w-[50px] h-[50px] flex justify-center items-center p-3 rounded-full shadow-lg">
+                    <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.299805" width="11.8182" height="11.8182" rx="2" fill="#0B7077"/>
+                    <rect x="0.299805" y="14.1818" width="11.8182" height="11.8182" rx="2" fill="#0B7077"/>
+                    <rect x="15.0728" width="11.8182" height="11.8182" rx="2" fill="#0B7077"/>
+                    <rect x="15.0728" y="14.1818" width="11.8182" height="11.8182" rx="2" fill="#FD661F"/>
+                    </svg>
+                  </span>
+                  <p class="text-base ml-7 text-[#696984]">
+                    Teachers don,t get lost in the grid view and have a dedicated Podium space.
+                  </p>
+                </li>
+                <li class="flex mb-3 items-center">
+                  <span class="w-[50px] h-[50px] flex justify-center items-center p-3 rounded-full shadow-lg">
+                    <svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8.2998" y="6" width="20" height="20" rx="2" fill="#0B7077"/>
+                    <rect x="0.299805" width="21.2245" height="21.2245" rx="2" fill="#FD661F"/>
+                    </svg>
+                  </span>
+                  <p class="text-base ml-7 text-[#696984]">
+                    TA’s and presenters can be moved to the front of the class.
+                  </p>
+                </li>
+                <li class="flex mb-3 items-center">
+                  <span class="w-[50px] h-[50px] flex justify-center items-center p-3 rounded-full shadow-lg">
+                    <svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1_648)">
+                    <path d="M4.7998 11.375C6.45449 11.375 7.7998 9.91758 7.7998 8.125C7.7998 6.33242 6.45449 4.875 4.7998 4.875C3.14512 4.875 1.7998 6.33242 1.7998 8.125C1.7998 9.91758 3.14512 11.375 4.7998 11.375ZM25.7998 11.375C27.4545 11.375 28.7998 9.91758 28.7998 8.125C28.7998 6.33242 27.4545 4.875 25.7998 4.875C24.1451 4.875 22.7998 6.33242 22.7998 8.125C22.7998 9.91758 24.1451 11.375 25.7998 11.375ZM27.2998 13H24.2998C23.4748 13 22.7295 13.3605 22.1857 13.9445C24.0748 15.0668 25.4154 17.093 25.7061 19.5H28.7998C29.6295 19.5 30.2998 18.7738 30.2998 17.875V16.25C30.2998 14.4574 28.9545 13 27.2998 13ZM15.2998 13C18.2014 13 20.5498 10.4559 20.5498 7.3125C20.5498 4.16914 18.2014 1.625 15.2998 1.625C12.3982 1.625 10.0498 4.16914 10.0498 7.3125C10.0498 10.4559 12.3982 13 15.2998 13ZM18.8998 14.625H18.5107C17.5357 15.1328 16.4529 15.4375 15.2998 15.4375C14.1467 15.4375 13.0686 15.1328 12.0889 14.625H11.6998C8.71855 14.625 6.2998 17.2453 6.2998 20.475V21.9375C6.2998 23.2832 7.30762 24.375 8.5498 24.375H22.0498C23.292 24.375 24.2998 23.2832 24.2998 21.9375V20.475C24.2998 17.2453 21.8811 14.625 18.8998 14.625ZM8.41387 13.9445C7.87012 13.3605 7.1248 13 6.2998 13H3.2998C1.64512 13 0.299805 14.4574 0.299805 16.25V17.875C0.299805 18.7738 0.970117 19.5 1.7998 19.5H4.88887C5.18418 17.093 6.52481 15.0668 8.41387 13.9445Z" fill="#0B7077"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1_648">
+                    <rect width="30" height="26" fill="white" transform="translate(0.299805)"/>
                     </clipPath>
-                    
-                  </defs>
-                </svg>
-              </div>
-              <h3 class="text-2xl mt-3 text-center font-semibold text-primary-600">
-                Beauty
-              </h3>
-              <p class="text-md text-center my-5 text-[#696984]">
-                One powerful online software suite that combines
-              </p>
-              <div class="text-center mt-7">
-                <a
-                  href=""
-                  class="p-3 px-6 block w-3/4 mx-auto text-[#fff] bg-secondary rounded-lg"
-                >
-                  Explore courses</a
-                >
-              </div>
-            </div>
-            <UiCourseCategoryCard />
-          </div>
-          <div class="text-center my-[5em]">
-            <a
-              href=""
-              class="p-3 text-base border-2 border-primary-600 px-10 rounded-xl bg-[#fff] text-primary-600"
-              >View all</a
-            >
-          </div>
-        </div>
-      </div>
-    </section> 
-    <section>
-      <div class="grid grid-cols-2 my-[10em]">
-        <div class="px-10">
-          <span class="inline-block p-1 px-6 rounded-lg bg-primary text-primary-600">
-            Benefits
-          </span>
-          <h1 class="text-3xl leading-[1.2em] font-bold mt-2 text-primary-600">
-            Get Student ID Card
-          </h1>
-          <div class="mt-[3em]">
-            <ul class="">
-              <li class="flex mb-3 items-center">
-                <span class="w-[50px] h-[50px] flex justify-center items-center p-3 rounded-full shadow-lg">
-                  <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="0.299805" width="11.8182" height="11.8182" rx="2" fill="#0B7077"/>
-                  <rect x="0.299805" y="14.1818" width="11.8182" height="11.8182" rx="2" fill="#0B7077"/>
-                  <rect x="15.0728" width="11.8182" height="11.8182" rx="2" fill="#0B7077"/>
-                  <rect x="15.0728" y="14.1818" width="11.8182" height="11.8182" rx="2" fill="#FD661F"/>
-                  </svg>
-                </span>
-                <p class="text-base ml-7 text-[#696984]">
-                  Teachers don,t get lost in the grid view and have a dedicated Podium space.
-                </p>
-              </li>
-              <li class="flex mb-3 items-center">
-                <span class="w-[50px] h-[50px] flex justify-center items-center p-3 rounded-full shadow-lg">
-                  <svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="8.2998" y="6" width="20" height="20" rx="2" fill="#0B7077"/>
-                  <rect x="0.299805" width="21.2245" height="21.2245" rx="2" fill="#FD661F"/>
-                  </svg>
-                </span>
-                <p class="text-base ml-7 text-[#696984]">
-                  TA’s and presenters can be moved to the front of the class.
-                </p>
-              </li>
-              <li class="flex mb-3 items-center">
-                <span class="w-[50px] h-[50px] flex justify-center items-center p-3 rounded-full shadow-lg">
-                  <svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_1_648)">
-                  <path d="M4.7998 11.375C6.45449 11.375 7.7998 9.91758 7.7998 8.125C7.7998 6.33242 6.45449 4.875 4.7998 4.875C3.14512 4.875 1.7998 6.33242 1.7998 8.125C1.7998 9.91758 3.14512 11.375 4.7998 11.375ZM25.7998 11.375C27.4545 11.375 28.7998 9.91758 28.7998 8.125C28.7998 6.33242 27.4545 4.875 25.7998 4.875C24.1451 4.875 22.7998 6.33242 22.7998 8.125C22.7998 9.91758 24.1451 11.375 25.7998 11.375ZM27.2998 13H24.2998C23.4748 13 22.7295 13.3605 22.1857 13.9445C24.0748 15.0668 25.4154 17.093 25.7061 19.5H28.7998C29.6295 19.5 30.2998 18.7738 30.2998 17.875V16.25C30.2998 14.4574 28.9545 13 27.2998 13ZM15.2998 13C18.2014 13 20.5498 10.4559 20.5498 7.3125C20.5498 4.16914 18.2014 1.625 15.2998 1.625C12.3982 1.625 10.0498 4.16914 10.0498 7.3125C10.0498 10.4559 12.3982 13 15.2998 13ZM18.8998 14.625H18.5107C17.5357 15.1328 16.4529 15.4375 15.2998 15.4375C14.1467 15.4375 13.0686 15.1328 12.0889 14.625H11.6998C8.71855 14.625 6.2998 17.2453 6.2998 20.475V21.9375C6.2998 23.2832 7.30762 24.375 8.5498 24.375H22.0498C23.292 24.375 24.2998 23.2832 24.2998 21.9375V20.475C24.2998 17.2453 21.8811 14.625 18.8998 14.625ZM8.41387 13.9445C7.87012 13.3605 7.1248 13 6.2998 13H3.2998C1.64512 13 0.299805 14.4574 0.299805 16.25V17.875C0.299805 18.7738 0.970117 19.5 1.7998 19.5H4.88887C5.18418 17.093 6.52481 15.0668 8.41387 13.9445Z" fill="#0B7077"/>
-                  </g>
-                  <defs>
-                  <clipPath id="clip0_1_648">
-                  <rect width="30" height="26" fill="white" transform="translate(0.299805)"/>
-                  </clipPath>
-                  </defs>
-                  </svg>
-                </span>
-                <p class="text-base ml-7 text-[#696984]">
-                  Teachers can easily see all students and class data at one time.
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="px-10">
-          <div class=" py-7 bg-primary rounded-xl">
-            <div class="flex gap-x-3 justify-center">
-              <span>
-                <IconsStudentFrontIdCardSvg />
-              </span>
-              <span class="">
-                <IconsStudentBackIdCardSvg />
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="grid grid-cols-2 my-[10em]">
-        <div class="px-10">
-          <div class=" py-7 rounded-xl">
-            <div class="flex gap-x-3 justify-center">
-              <span>
-                <IconsStaffTrainingSvg />
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="px-10">
-          <span class="inline-block p-1 px-6 rounded-lg bg-primary text-primary-600">
-            Training
-          </span>
-          <h1 class="text-3xl leading-[1.2em] font-bold mt-2 text-secondary">
-            Staff Training
-          </h1>
-          <div class="mt-[3em]">
-            <ul class="">
-              <li class="flex mb-3 items-center">
-                <span class="w-[50px] h-[50px] flex justify-center items-center p-3 rounded-full shadow-lg">
-                  <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="0.299805" width="11.8182" height="11.8182" rx="2" fill="#0B7077"/>
-                  <rect x="0.299805" y="14.1818" width="11.8182" height="11.8182" rx="2" fill="#0B7077"/>
-                  <rect x="15.0728" width="11.8182" height="11.8182" rx="2" fill="#0B7077"/>
-                  <rect x="15.0728" y="14.1818" width="11.8182" height="11.8182" rx="2" fill="#FD661F"/>
-                  </svg>
-                </span>
-                <p class="text-base ml-7 text-[#696984]">
-                  Teachers don,t get lost in the grid view and have a dedicated Podium space.
-                </p>
-              </li>
-              <li class="flex mb-3 items-center">
-                <span class="w-[50px] h-[50px] flex justify-center items-center p-3 rounded-full shadow-lg">
-                  <svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="8.2998" y="6" width="20" height="20" rx="2" fill="#0B7077"/>
-                  <rect x="0.299805" width="21.2245" height="21.2245" rx="2" fill="#FD661F"/>
-                  </svg>
-                </span>
-                <p class="text-base ml-7 text-[#696984]">
-                  TA’s and presenters can be moved to the front of the class.
-                </p>
-              </li>
-              <li class="flex mb-3 items-center">
-                <span class="w-[50px] h-[50px] flex justify-center items-center p-3 rounded-full shadow-lg">
-                  <svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_1_648)">
-                  <path d="M4.7998 11.375C6.45449 11.375 7.7998 9.91758 7.7998 8.125C7.7998 6.33242 6.45449 4.875 4.7998 4.875C3.14512 4.875 1.7998 6.33242 1.7998 8.125C1.7998 9.91758 3.14512 11.375 4.7998 11.375ZM25.7998 11.375C27.4545 11.375 28.7998 9.91758 28.7998 8.125C28.7998 6.33242 27.4545 4.875 25.7998 4.875C24.1451 4.875 22.7998 6.33242 22.7998 8.125C22.7998 9.91758 24.1451 11.375 25.7998 11.375ZM27.2998 13H24.2998C23.4748 13 22.7295 13.3605 22.1857 13.9445C24.0748 15.0668 25.4154 17.093 25.7061 19.5H28.7998C29.6295 19.5 30.2998 18.7738 30.2998 17.875V16.25C30.2998 14.4574 28.9545 13 27.2998 13ZM15.2998 13C18.2014 13 20.5498 10.4559 20.5498 7.3125C20.5498 4.16914 18.2014 1.625 15.2998 1.625C12.3982 1.625 10.0498 4.16914 10.0498 7.3125C10.0498 10.4559 12.3982 13 15.2998 13ZM18.8998 14.625H18.5107C17.5357 15.1328 16.4529 15.4375 15.2998 15.4375C14.1467 15.4375 13.0686 15.1328 12.0889 14.625H11.6998C8.71855 14.625 6.2998 17.2453 6.2998 20.475V21.9375C6.2998 23.2832 7.30762 24.375 8.5498 24.375H22.0498C23.292 24.375 24.2998 23.2832 24.2998 21.9375V20.475C24.2998 17.2453 21.8811 14.625 18.8998 14.625ZM8.41387 13.9445C7.87012 13.3605 7.1248 13 6.2998 13H3.2998C1.64512 13 0.299805 14.4574 0.299805 16.25V17.875C0.299805 18.7738 0.970117 19.5 1.7998 19.5H4.88887C5.18418 17.093 6.52481 15.0668 8.41387 13.9445Z" fill="#0B7077"/>
-                  </g>
-                  <defs>
-                  <clipPath id="clip0_1_648">
-                  <rect width="30" height="26" fill="white" transform="translate(0.299805)"/>
-                  </clipPath>
-                  </defs>
-                  </svg>
-                </span>
-                <p class="text-base ml-7 text-[#696984]">
-                  Teachers can easily see all students and class data at one time.
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div  class="my-[10em] px-8 relative">
-        <div class="p-10 px-[3em] mx-[3em] rounded-lg bg-[#DF1C25]">
-          <div class="grid grid-cols-2 justify-between">
-            <div class="">
-              <h1 class=" text-[#fff] font-bold text-4xl">Why You should buy gift cards?</h1>
-              <ul class="mt-10 text-[#fff]">
-                <li class="flex items-center mb-3">
-                  <span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.23 16L10 13.45L5.77 16L6.89 11.19L3.16 7.96L8.08 7.54L10 3L11.92 7.53L16.84 7.95L13.11 11.18L14.23 16ZM10 0C4.47 0 0 4.5 0 10C0 12.6522 1.05357 15.1957 2.92893 17.0711C3.85752 17.9997 4.95991 18.7362 6.17317 19.2388C7.38642 19.7413 8.68678 20 10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 8.68678 19.7413 7.38642 19.2388 6.17317C18.7362 4.95991 17.9997 3.85752 17.0711 2.92893C16.1425 2.00035 15.0401 1.26375 13.8268 0.761205C12.6136 0.258658 11.3132 0 10 0Z" fill="white"/>
+                    </defs>
                     </svg>
                   </span>
-                  <span class="ml-5">Teachers don’t get lost in the grid view and have a dedicated Podium space.</span>
-                </li>
-                <li class="flex items-center mb-3">
-                  <span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.23 16L10 13.45L5.77 16L6.89 11.19L3.16 7.96L8.08 7.54L10 3L11.92 7.53L16.84 7.95L13.11 11.18L14.23 16ZM10 0C4.47 0 0 4.5 0 10C0 12.6522 1.05357 15.1957 2.92893 17.0711C3.85752 17.9997 4.95991 18.7362 6.17317 19.2388C7.38642 19.7413 8.68678 20 10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 8.68678 19.7413 7.38642 19.2388 6.17317C18.7362 4.95991 17.9997 3.85752 17.0711 2.92893C16.1425 2.00035 15.0401 1.26375 13.8268 0.761205C12.6136 0.258658 11.3132 0 10 0Z" fill="white"/>
-                    </svg>
-                  </span>
-                  <span class="ml-5">Teachers don’t get lost in the grid view and have a dedicated Podium space.</span>
-                </li>
-                <li class="flex items-center mb-3">
-                  <span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.23 16L10 13.45L5.77 16L6.89 11.19L3.16 7.96L8.08 7.54L10 3L11.92 7.53L16.84 7.95L13.11 11.18L14.23 16ZM10 0C4.47 0 0 4.5 0 10C0 12.6522 1.05357 15.1957 2.92893 17.0711C3.85752 17.9997 4.95991 18.7362 6.17317 19.2388C7.38642 19.7413 8.68678 20 10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 8.68678 19.7413 7.38642 19.2388 6.17317C18.7362 4.95991 17.9997 3.85752 17.0711 2.92893C16.1425 2.00035 15.0401 1.26375 13.8268 0.761205C12.6136 0.258658 11.3132 0 10 0Z" fill="white"/>
-                    </svg>
-                  </span>
-                  <span class="ml-5">Teachers don’t get lost in the grid view and have a dedicated Podium space.</span>
+                  <p class="text-base ml-7 text-[#696984]">
+                    Teachers can easily see all students and class data at one time.
+                  </p>
                 </li>
               </ul>
-              <div class="mt-10">
-                <a href="" class="p-3 text-base px-8 rounded-xl text-primary-600 bg-[#fff]"
-                  >BUY NOW</a>
+            </div>
+          </div>
+          <div class="px-10">
+            <div class=" py-7 bg-primary rounded-xl">
+              <div class="flex gap-x-3 justify-center">
+                <span>
+                  <IconsStudentFrontIdCardSvg />
+                </span>
+                <span class="">
+                  <IconsStudentBackIdCardSvg />
+                </span>
               </div>
             </div>
-            <!-- <div class=""> -->
-              <img src="/2aa0b7d61f2eb9d4a883c2a22676ba8d.png" class=" absolute translate-x-[15em]" />
-            <!-- </div> -->
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section>
+        <div class="grid grid-cols-2 my-[8em]">
+          <div class="px-10">
+            <div class=" py-7 rounded-xl">
+              <div class="flex gap-x-3 justify-center">
+                <span>
+                  <IconsStaffTrainingSvg />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="px-10">
+            <span class="inline-block p-1 px-6 rounded-lg bg-primary text-primary-600">
+              Training
+            </span>
+            <h1 class="text-3xl leading-[1.2em] font-bold mt-2 text-secondary">
+              Staff training
+            </h1>
+            <div class="mt-[3em]">
+              <ul class="">
+                <li class="flex mb-3 items-center">
+                  <span class="w-[50px] h-[50px] flex justify-center items-center p-3 rounded-full shadow-lg">
+                    <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.299805" width="11.8182" height="11.8182" rx="2" fill="#0B7077"/>
+                    <rect x="0.299805" y="14.1818" width="11.8182" height="11.8182" rx="2" fill="#0B7077"/>
+                    <rect x="15.0728" width="11.8182" height="11.8182" rx="2" fill="#0B7077"/>
+                    <rect x="15.0728" y="14.1818" width="11.8182" height="11.8182" rx="2" fill="#FD661F"/>
+                    </svg>
+                  </span>
+                  <p class="text-base ml-7 text-[#696984]">
+                    Teachers don,t get lost in the grid view and have a dedicated Podium space.
+                  </p>
+                </li>
+                <li class="flex mb-3 items-center">
+                  <span class="w-[50px] h-[50px] flex justify-center items-center p-3 rounded-full shadow-lg">
+                    <svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8.2998" y="6" width="20" height="20" rx="2" fill="#0B7077"/>
+                    <rect x="0.299805" width="21.2245" height="21.2245" rx="2" fill="#FD661F"/>
+                    </svg>
+                  </span>
+                  <p class="text-base ml-7 text-[#696984]">
+                    TA’s and presenters can be moved to the front of the class.
+                  </p>
+                </li>
+                <li class="flex mb-3 items-center">
+                  <span class="w-[50px] h-[50px] flex justify-center items-center p-3 rounded-full shadow-lg">
+                    <svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1_648)">
+                    <path d="M4.7998 11.375C6.45449 11.375 7.7998 9.91758 7.7998 8.125C7.7998 6.33242 6.45449 4.875 4.7998 4.875C3.14512 4.875 1.7998 6.33242 1.7998 8.125C1.7998 9.91758 3.14512 11.375 4.7998 11.375ZM25.7998 11.375C27.4545 11.375 28.7998 9.91758 28.7998 8.125C28.7998 6.33242 27.4545 4.875 25.7998 4.875C24.1451 4.875 22.7998 6.33242 22.7998 8.125C22.7998 9.91758 24.1451 11.375 25.7998 11.375ZM27.2998 13H24.2998C23.4748 13 22.7295 13.3605 22.1857 13.9445C24.0748 15.0668 25.4154 17.093 25.7061 19.5H28.7998C29.6295 19.5 30.2998 18.7738 30.2998 17.875V16.25C30.2998 14.4574 28.9545 13 27.2998 13ZM15.2998 13C18.2014 13 20.5498 10.4559 20.5498 7.3125C20.5498 4.16914 18.2014 1.625 15.2998 1.625C12.3982 1.625 10.0498 4.16914 10.0498 7.3125C10.0498 10.4559 12.3982 13 15.2998 13ZM18.8998 14.625H18.5107C17.5357 15.1328 16.4529 15.4375 15.2998 15.4375C14.1467 15.4375 13.0686 15.1328 12.0889 14.625H11.6998C8.71855 14.625 6.2998 17.2453 6.2998 20.475V21.9375C6.2998 23.2832 7.30762 24.375 8.5498 24.375H22.0498C23.292 24.375 24.2998 23.2832 24.2998 21.9375V20.475C24.2998 17.2453 21.8811 14.625 18.8998 14.625ZM8.41387 13.9445C7.87012 13.3605 7.1248 13 6.2998 13H3.2998C1.64512 13 0.299805 14.4574 0.299805 16.25V17.875C0.299805 18.7738 0.970117 19.5 1.7998 19.5H4.88887C5.18418 17.093 6.52481 15.0668 8.41387 13.9445Z" fill="#0B7077"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1_648">
+                    <rect width="30" height="26" fill="white" transform="translate(0.299805)"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                  </span>
+                  <p class="text-base ml-7 text-[#696984]">
+                    Teachers can easily see all students and class data at one time.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mt-[3em] mb-[10em]">
+        <div  class=" px-8 relative">
+          <div class="p-10 px-[3em] rounded-lg bg-[#DF1C25]">
+            <div class="grid grid-cols-2 justify-between">
+              <div class="">
+                <h1 class=" text-[#fff] font-bold text-4xl">Why You should buy gift cards?</h1>
+                <ul class="mt-10 text-[#fff]">
+                  <li class="flex items-center mb-3">
+                    <span>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.23 16L10 13.45L5.77 16L6.89 11.19L3.16 7.96L8.08 7.54L10 3L11.92 7.53L16.84 7.95L13.11 11.18L14.23 16ZM10 0C4.47 0 0 4.5 0 10C0 12.6522 1.05357 15.1957 2.92893 17.0711C3.85752 17.9997 4.95991 18.7362 6.17317 19.2388C7.38642 19.7413 8.68678 20 10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 8.68678 19.7413 7.38642 19.2388 6.17317C18.7362 4.95991 17.9997 3.85752 17.0711 2.92893C16.1425 2.00035 15.0401 1.26375 13.8268 0.761205C12.6136 0.258658 11.3132 0 10 0Z" fill="white"/>
+                      </svg>
+                    </span>
+                    <span class="ml-5">Teachers don’t get lost in the grid view and have a dedicated Podium space.</span>
+                  </li>
+                  <li class="flex items-center mb-3">
+                    <span>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.23 16L10 13.45L5.77 16L6.89 11.19L3.16 7.96L8.08 7.54L10 3L11.92 7.53L16.84 7.95L13.11 11.18L14.23 16ZM10 0C4.47 0 0 4.5 0 10C0 12.6522 1.05357 15.1957 2.92893 17.0711C3.85752 17.9997 4.95991 18.7362 6.17317 19.2388C7.38642 19.7413 8.68678 20 10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 8.68678 19.7413 7.38642 19.2388 6.17317C18.7362 4.95991 17.9997 3.85752 17.0711 2.92893C16.1425 2.00035 15.0401 1.26375 13.8268 0.761205C12.6136 0.258658 11.3132 0 10 0Z" fill="white"/>
+                      </svg>
+                    </span>
+                    <span class="ml-5">Teachers don’t get lost in the grid view and have a dedicated Podium space.</span>
+                  </li>
+                  <li class="flex items-center mb-3">
+                    <span>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.23 16L10 13.45L5.77 16L6.89 11.19L3.16 7.96L8.08 7.54L10 3L11.92 7.53L16.84 7.95L13.11 11.18L14.23 16ZM10 0C4.47 0 0 4.5 0 10C0 12.6522 1.05357 15.1957 2.92893 17.0711C3.85752 17.9997 4.95991 18.7362 6.17317 19.2388C7.38642 19.7413 8.68678 20 10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 8.68678 19.7413 7.38642 19.2388 6.17317C18.7362 4.95991 17.9997 3.85752 17.0711 2.92893C16.1425 2.00035 15.0401 1.26375 13.8268 0.761205C12.6136 0.258658 11.3132 0 10 0Z" fill="white"/>
+                      </svg>
+                    </span>
+                    <span class="ml-5">Teachers don’t get lost in the grid view and have a dedicated Podium space.</span>
+                  </li>
+                </ul>
+                <div class="mt-10">
+                  <a href="" class="p-3 text-base px-8 rounded-xl text-primary-600 bg-[#fff]"
+                    >BUY NOW</a>
+                </div>
+              </div>
+              <div class="">
+                <img class="absolute z-10 -translate-x-[3.5em] -translate-y-[14.7em] w-[55em]" src="/2aa0b7d61f2eb9d4a883c2a22676ba8d.png"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
+
+<script setup>
+const tabItems = ["UI/UX Design", "Program Design", "Program design", "Program Design", "Program Design"]
+const courses = [
+  {
+    date: "1- 28 July 2024",
+    image: "/d4922183dce51286c45f3cd7aee0f417.png",
+    no_of_students: 20,
+    title: "Product Management Basic- Course",
+    description: "Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia.",
+    price: 380,
+    discount: 500
+  },
+  {
+    date: "1- 28 July 2024",
+    image: "/d1f49ef71983cf6326f17c53fd9ce1de.png",
+    no_of_students: 11,
+    title: "BM Data Science Professional Certificate",
+    description: "Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia.",
+    price: 678,
+    discount: 500
+  },
+  {
+    date: "1- 28 July 2024",
+    image: "/c0cf46f9c5b7e2389e58c6911c9e5469.png",
+    no_of_students: 234,
+    title: "The Science Of Well-Being",
+    description: "Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia.",
+    price: 123,
+    discount: 500
+  },
+  {
+    date: "1- 28 July 2024",
+    image: "/a4905dd085718bae4bc38f09b8dafaea.png",
+    no_of_students: 342,
+    title: "Python For Everbody Specialization",
+    description: "Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia.",
+    price: 380,
+    discount: 500
+  }
+]
+</script>

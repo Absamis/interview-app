@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const { addDynamicIconSelectors } = require("@iconify/tailwind");
 export default {
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -9,6 +10,11 @@ export default {
     "./error.vue",
   ],
   theme: {
+    fontFamily: {
+      sans: ['inter'],
+      picoblack: ['Picoblack'],
+      raleway: ['Raleway']
+    },
     extend: {},
     colors: {
       primary: {
@@ -20,6 +26,8 @@ export default {
       }
     }
   },
-  plugins: [],
+  plugins: [
+    addDynamicIconSelectors(),
+  ],
 }
 
