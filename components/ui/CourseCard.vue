@@ -649,10 +649,11 @@
       </div>
       <div class="p-4 text-left">
         <span class="text-sm mb-3 text-[#777795]">1 - 28 July 2022</span>
-
-        <a href="" class="text-xl font-bold mb-2 text-primary-600">
-          Product Management Basic- Course
-        </a>
+        <p>
+          <a href="" class="text-xl font-bold mb-2 text-primary-600">
+            Product Management Basic- Course
+          </a>
+        </p>
         <p class="text-sm text-[#4D4D4D]">
           Product Management Masterclass, you will learn with Sarah Johnson - Head of
           Product Customer Platform Gojek Indonesia.
