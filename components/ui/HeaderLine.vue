@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute top-0">
+  <div class="absolute z-20 top-0">
     <span class="absolute">
       <svg
         width="735"
