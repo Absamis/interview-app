@@ -2,9 +2,9 @@
   <div class="rounded-2xl relative shadow-lg">
     <div class="relative text-center">
       <div class="h-[170px] z-1 overflow-hidden rounded-tr-2xl rounded-tl-2xl">
-        <img class="z-1" :src="course.image" />
+        <img class="z-1 h-[170px]" :src="course.image" />
       </div>
-      <div class="p-2 z-10 relative mx-auto mt-[-2.5em] px-6 w-fit block rounded-3xl bg-[#F1F1F1]">
+      <div class="p-2 z-10 relative mx-auto mt-[-1.5em] px-6 w-fit block rounded-3xl bg-[#F1F1F1]">
         <div class="flex">
           <div class="flex">
             <span class="z-[5]">
